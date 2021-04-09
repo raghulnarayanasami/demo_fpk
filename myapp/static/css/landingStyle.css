@@ -1,0 +1,99 @@
+    body, html {
+    height: 100%;
+    }
+
+    .header{
+        background-image: linear-gradient(to right, #012b66, #013371, #014689, #004f96, #0062ae);
+    }
+
+    .signupButton{
+        background-color: #FCD927;
+        color: #006CBB; 
+    }
+
+    .sliderImage1{
+    /* background-image: url("Images/bgAlpha.svg");  */
+    background-image: linear-gradient(to right, #012b66, #013371, #014689, #004f96, #0062ae);
+    width: 100%;
+    object-fit: cover;
+    min-height: 83.2vh;
+    }
+
+.imgClass
+{
+    height: 10rem;
+}
+
+ 
+.sliderIcons{
+    z-index: 10;  
+    position: absolute;  
+    right: -45px;  
+    top: 0;
+}
+
+.sliderIcons .menuIcon{
+padding : 0.4rem;
+margin : 0.5rem;
+opacity: 50
+}
+  
+  .sidenav-centered {   
+    float: none;
+    position: absolute;
+    top: 20%;
+    right: 10%  
+  }
+  .btn-col:hover{
+      color:dodgerblue;
+  }
+
+  .back-img{
+        padding-left :0px;
+        padding-right : 0px;
+    }
+    .font{
+        font-size:35px;
+    }
+    .carousel-caption {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    left:18px;
+    width : 97%;
+    height : 50%;
+    bottom: auto;
+    padding: 52px;
+    text-align: left;
+    background-color: rgb(6,1,42,0.4);
+}
+.carousel-indicators li {
+    border-radius: 50%;
+    width:15px;
+    height : 15px;
+    margin : 1rem;
+}
+.carousel-inner{
+ height :83.2vh;
+}
+ol{
+    margin-bottom :2rem;
+}
+
+.div-trans{
+    width : 100%;
+    animation : carousel 3s linear 2s both;
+}
+@keyframes carousel{
+    from {width : 100%}
+    to {width : 50%}
+}
+
+.text-fade{
+    animation : textFade ease 3s ;
+}
+@keyframes textFade{
+    0%{opacity: 0;margin-top: 0;}
+    50%{opacity: 0.5;margin-top: 5px;}
+    100%{opacity: 1;margin-top: 10px;}
+}
