@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate,login, logout
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 import boto3
+import os
 # Create your views here.
 
 user2=''
@@ -27,13 +28,17 @@ def user_login(request):
     else:
         return render(request, 'myapp/index.html', context)
             
+def get_hostname():
+    out = os.popen('hostname').read()
+    return str(out)
        
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
 def storagedata(request):
-    return  render(request, 'myapp/landing.html', context=None)
+    data = get_hostname()
+    return  render(request, 'myapp/landing.html', {"data":data})
 
 @csrf_exempt
 def s3bucket(request):
