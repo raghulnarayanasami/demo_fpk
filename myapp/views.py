@@ -67,7 +67,7 @@ def s3bucket(request):
 
 def boto3connection(bucketname, filename, uploadfile):
 
-    host = "https://aos.us-central-1.tcsecp.com"
+    host = "https://172.25.200.67"
     access = "14641d0aa03b4998bedf8c39b72c2e62"
     secret = "895cb3ee98b84c919e4362e2082c5f69"
     cert_path = "/root/tcs_ecp_cert/tcsecp.pem"
@@ -78,7 +78,7 @@ def boto3connection(bucketname, filename, uploadfile):
     s3.Object(bucketname,filename).upload_file(Filename=uploadfile)
 
 def bucketlist():
-    host = "https://aos.us-central-1.tcsecp.com"
+    host = "https://172.25.200.67"
     access = "14641d0aa03b4998bedf8c39b72c2e62"
     secret = "895cb3ee98b84c919e4362e2082c5f69"
     
