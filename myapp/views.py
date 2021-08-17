@@ -42,7 +42,7 @@ def storagedata(request):
 
 @csrf_exempt
 def s3bucket(request):
-  
+    data = get_hostname()
     if request.method == 'POST':
         context = {}
         student = StudentForm(request.POST, request.FILES)
@@ -54,16 +54,16 @@ def s3bucket(request):
             for bucket in bucket_list:
                 if bucket.name == str(bucketname):
                    context['error']="The Bucket Name already exists.  Choose other Buket Name"
-                   return render(request, 'myapp/message.html', context)
+                   return render(request, 'myapp/message.html',  {"data":data})
 
             handle_uploaded_file(request.FILES['file'])
             uploadfile = "/root/myapp/static/upload/"+filename
             boto3connection(bucketname, filename, uploadfile)
             context['error']="The New Container is created : " + bucketname + " and The File is Uploaded Successfully in that Bucket"
-            return render(request, 'myapp/message.html', context)
+            return render(request, 'myapp/message.html',  {"data":data})
     else:
         student = StudentForm()
-        return render(request, "myapp/s3.html", {'form': student})
+        return render(request, "myapp/s3.html", {'form': student, "data":data})
 
 def boto3connection(bucketname, filename, uploadfile):
 
