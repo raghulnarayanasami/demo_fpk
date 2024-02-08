@@ -68,8 +68,8 @@ def s3bucket(request):
 def boto3connection(bucketname, filename, uploadfile):
 
     host = "https://172.25.200.67:443"
-    access = "08c08f8f09744dd4b9212b6c56d5ce83"
-    secret = "3af80ecdd7774982a26f7540db1f73fa"
+    access = "7547ab0602e149489bccebc26660dd0f"
+    secret = "cd7ecaa50d6c473e9208882e29909347"
     cert_path = "/root/tcs_ecp_cert/tcsecp.pem"
 
     s3 = boto3.resource('s3',endpoint_url=host,verify=False,aws_access_key_id=access,aws_secret_access_key=secret)
@@ -79,8 +79,8 @@ def boto3connection(bucketname, filename, uploadfile):
 
 def bucketlist():
     host = "https://172.25.200.67:443"
-    access = "08c08f8f09744dd4b9212b6c56d5ce83"
-    secret = "3af80ecdd7774982a26f7540db1f73fa"
+    access = "7547ab0602e149489bccebc26660dd0f"
+    secret = "cd7ecaa50d6c473e9208882e29909347"
     cert_path = "/root/tcs_ecp_cert/tcsecp.pem"
 
     s3 = boto3.resource('s3',endpoint_url=host,verify=False,aws_access_key_id=access,aws_secret_access_key=secret)
